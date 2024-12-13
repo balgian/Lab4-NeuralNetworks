@@ -25,7 +25,7 @@ def main() -> None:
     x_test = x_test.reshape((x_test.shape[0], 28, 28, 1))
     # Train the autoencoder
     autoencoder = Autoencoder(input_shape=(28, 28, 1), encoding_dim=32, optimizer='adam', loss='binary_crossentropy')
-    autoencoder.fit(x_train_18, epochs=50, batch_size=256, validation_data=(x_test, x_test),
+    autoencoder.fit(x_train_18, epochs=100, batch_size=256, validation_data=(x_test, x_test),
                     activation_encoding='relu', activation_decoding='sigmoid')
     # Predicting on test data
     decoded_imgs = autoencoder.predict(x_test)
@@ -52,7 +52,7 @@ def main() -> None:
 
     plotmodelhistory(autoencoder.autoencoder.history)
 
-    # Compute VAF
+    # Compute Variance Accounted For (VAF)
     vaf_value = compute_vaf(x_test.flatten(), decoded_imgs.flatten())
     print(f"VAF: {vaf_value:.2f}%")
 
@@ -63,12 +63,12 @@ def main() -> None:
     for digit in x:
         vaf_values.append(compute_vaf(x_test[y_test == digit].flatten(), decoded_imgs[y_test == digit].flatten()))
     plt.plot(x, vaf_values, 'o-')
-    plt.title('Variance Accounted For (VAF)')
     plt.xlabel('Digits')
     plt.ylabel('VAF (%)')
     plt.grid(True, linestyle='--', linewidth=0.5, color='gray', alpha=0.5)
     for i, vaf in enumerate(vaf_values):
         plt.text(x[i], vaf, f'{vaf:.2f}%', ha='center', va='bottom')
+    plt.xticks(x)
     plt.ylim(0, 100)
     plt.show()
 
@@ -84,11 +84,10 @@ def compute_vaf(true_data: np.ndarray, predicted_data: np.ndarray) -> float:
     vaf = 1 - np.var(true_data - predicted_data) / np.var(true_data)
     return vaf * 100  # Convert to percentage
 
-
+# * Autoencoder Model loss
 def plotmodelhistory(history):
     plt.plot(history.history['loss'])
     plt.plot(history.history['val_loss'])
-    plt.title('Autoencoder Model loss')
     plt.ylabel('Loss')
     plt.xlabel('Epoch')
     plt.legend(['Train', 'Test'], loc='upper left')
@@ -121,22 +120,21 @@ def plotcl(x: np.ndarray, Xlbl: np.ndarray, coord: Optional[slice] = None, psize
         ps = pointstyles[label % len(pointstyles)]
         if x.shape[1] == 1:
             plt.scatter(x[indices, 0], np.zeros_like(x[indices, 0]), c=[cc], marker=ps, s=psize, linewidth=int(np.log(psize + 1) + 1), label=f"Label {label}")
-            plt.xlabel('x (px)')
-            plt.ylabel('y (px)')
+            plt.xlabel('1st dimension of the encoder')
         elif x.shape[1] == 2:
             plt.scatter(x[indices, 0], x[indices, 1], c=[cc], marker=ps, s=psize, linewidth=int(np.log(psize + 1) + 1), label=f"Label {label}")
-            plt.xlabel('x (px)')
-            plt.ylabel('y (px)')
+            plt.xlabel('1st dimension of the encoder')
+            plt.ylabel('2nd dimension of the encoder')
         else:
             ax = plt.axes(projection='3d')
             ax.scatter3D(x[indices, 0], x[indices, 1], x[indices, 2], c=[cc], marker=ps, s=psize,
                          linewidth=int(np.log(psize + 1) + 1), label=f"Label {label}")
-            ax.set_xlabel('x (px)')
-            ax.set_ylabel('y (px)')
-            ax.set_zlabel('z (px)')
+            ax.set_xlabel('1st dimension of the encoder')
+            ax.set_ylabel('2nd dimension of the encoder')
+            ax.set_zlabel('3rd dimension of the encoder')
+    plt.ticklabel_format(style='sci', axis='both', scilimits=(0, 0))
     plt.legend(loc='best')
     plt.show()
-
 
 
 if __name__ == '__main__':
