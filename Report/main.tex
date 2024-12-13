@@ -1,0 +1,57 @@
+\documentclass[9pt,technote]{IEEEtran}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{cite}
+\usepackage{newtxtext,newtxmath}
+\usepackage{tablefootnote}
+\title{Neural Network}
+\author{
+	Gian Marco Balia\\
+	Robotic Engineering - University of Genoa\\
+	s4398275@studenti.unige.it
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Artificial neural networks are a fundamental approach in machine learning due to their ability to model complex relationships and learn meaningful representations from data. Autoencoders, a specific class of neural networks, are widely used for dimensionality reduction, data compression, and unsupervised learning tasks. This report explores the fundamental principles of neural networks and autoencoders, analyzing their architecture, training process, and practical applications.
+\end{abstract}
+\begin{IEEEkeywords}
+Artificial neural networks, autoencoder
+\end{IEEEkeywords}
+
+\section{Introduction}
+Artificial neural networks in the field of machine learning represent an innovative approach to tackling complex problems across various domains, from image processing to sequential data prediction. Autoencoders are among the earliest neural network architectures designed to learn latent representations of data in an unsupervised manner. They operate by compressing data into a reduced-dimensional space and reconstructing the original input, aiming to capture relevant features and redundancies. \\
+The importance of autoencoders lies in their versatility: they have been successfully applied in tasks such as dimensionality reduction (Hinton e Salakhutdinov, 2006), anomaly detection (Chalapathy e Chawla, 2019), and deep network pre-training. Furthermore, recent advancements, such as the introduction of variational autoencoders (Kingma e Welling, 2013), have expanded their applications to include synthetic data generation and probabilistic learning. This report aims to provide an in-depth analysis of the fundamental concepts related to neural networks and autoencoders, illustrating practical examples and experiments that demonstrate their effectiveness in real-world applications.
+\section{Material and methods}
+
+\subsection{Data processing}
+For this analysis, the MNIST dataset (Modified National Institute of Standards and Technology) was used, one of the most well-known datasets for image classification tasks. This dataset contains images of handwritten digits ($0$ to $9$), where each image is grayscale, has dimensions of $28x28$ pixels, and each pixel has a value between $0$ and $255$, representing the intensity of the color ($0$ = black, $255$ = white).
+
+After loading the data, they were divided into two main arrays:
+\begin{itemize}
+	\item \textit{$x_{train}$}: contains the training images, represented as $28x28$ matrices that describe the pixel values.
+	\item \textit{$y_{train}$}: contains the corresponding labels (from $0$ to $9$), which represent the digits associated with the images.
+\end{itemize}
+Then, the following steps were done to make the data compatible with the model architecture.
+\begin{itemize}
+	\item \textit{Data Filtering}: the data were filtered to include only the digits 1 and 8. This reduced the dataset to two classes of interest. The filtered data were then split into two distinct datasets: $x_{train18}$, $80\%$ of the filtered data, used to train the model; $x_{test18}$. the remaining $20\%$, used to test the model.
+	\item \textit{Data Normalization}: to improve performance and ensure compatibility with the model architecture, the data were normalized, converting the pixel values from their original range ($0$-$255$) to a range between $0$ and $1$. This transformation is essential to accelerate convergence during training and reduce the risk of numerical instability.
+	\item \textit{Data Reshaping}: since the MNIST images, when loaded, have the shape like a three-dimensional array (\textit{$num_{}samples$}, $28$, $28$), where: \textit{$num_{}samples$} is the number of images in the dataset, and $28x28$ are the dimensions of each image.
+	Many deep learning models, especially those using convolutional neural networks (CNNs), require the data to be represented in a four-dimensional format: (\textit{$num_{}samples$}, \textit{height}, \textit{width}, \textit{channels}). In the case of MNIST images, the channels value is $1$ because the images are grayscale.
+	Thus, the data were reshaped from the form (\textit{$num_{}samples$}, $28$, $28$) to (\textit{$num_{}samples$}, $28$, $28$, $1$) using the \textit{reshape} command. This step explicitly adds the required depth channel, making the data compatible with the autoencoder architecture.
+\end{itemize}
+
+\subsection{Autoencoder}
+
+
+\subsection{Model evaluation}
+
+
+\section{Results and Conclusion}
+
+
+\end{document}
