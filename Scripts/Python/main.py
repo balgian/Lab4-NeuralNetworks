@@ -31,20 +31,22 @@ def main() -> None:
                     activation_encoding='relu', activation_decoding='sigmoid')
     # Predicting on test data
     decoded_imgs = autoencoder.predict(x_test_18)
-    print(decoded_imgs.shape)
+
     # Display original and reconstructed images
-    n = 10
-    plt.figure(figsize=(10, 2))
+    n = 20
+    plt.figure(figsize=(10, 4))
     for i in range(n):
         # Original
         ax = plt.subplot(2, n, i + 1)
         plt.imshow(x_test_18[i].reshape(28, 28), cmap='gray')
-        plt.axis('off')
+        ax.set_xticks([])
+        ax.set_yticks([])
 
         # Reconstructed
         ax = plt.subplot(2, n, i + 1 + n)
         plt.imshow(decoded_imgs[i].reshape(28, 28), cmap='gray')
-        plt.axis('off')
+        ax.set_xticks([])
+        ax.set_yticks([])
     plt.show()
 
     # Plot the clusters
@@ -57,18 +59,15 @@ def main() -> None:
 
     # Compute Variance Accounted For (VAF)
     vaf_value = compute_vaf(x_test_18.flatten(), decoded_imgs.flatten())
-    print(f"VAF: {vaf_value:.2f}%")
 
-    # Plot VAF
+    # Plot VAF as bar chart
     plt.figure()
     x = np.unique(y_test_18)
-    vaf_values = []
-    for digit in x:
-        vaf_values.append(compute_vaf(x_test_18[y_test_18 == digit].flatten(), decoded_imgs[y_test_18 == digit].flatten()))
-    plt.plot(x, vaf_values, 'o-')
+    vaf_values = [compute_vaf(x_test_18[y_test_18 == digit].flatten(), decoded_imgs[y_test_18 == digit].flatten()) for digit in x]
+    plt.bar(x, vaf_values, color='skyblue')
     plt.xlabel('Digits')
     plt.ylabel('VAF (%)')
-    plt.grid(True, linestyle='--', linewidth=0.5, color='gray', alpha=0.5)
+    plt.grid(axis='y', linestyle='--', linewidth=0.5, color='gray', alpha=0.5)
     for i, vaf in enumerate(vaf_values):
         plt.text(x[i], vaf, f'{vaf:.2f}%', ha='center', va='bottom')
     plt.xticks(x)
