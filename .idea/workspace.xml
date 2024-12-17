@@ -20,7 +20,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c9a464ca-a5af-4499-822b-a606aa1bea36" name="Changes" comment="Change endocoded dimentisons' plots">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/Python/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Python/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Report/main.tex" beforeDir="false" afterPath="$PROJECT_DIR$/Report/main.tex" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,6 +146,9 @@
       <workItem from="1734094479101" duration="2572000" />
       <workItem from="1734121587187" duration="903000" />
       <workItem from="1734269438750" duration="1644000" />
+      <workItem from="1734271100876" duration="90000" />
+      <workItem from="1734271293184" duration="2000" />
+      <workItem from="1734271300692" duration="566000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -171,11 +174,30 @@
       <option name="project" value="LOCAL" />
       <updated>1734093919495</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Change endocoded dimentisons' plots">
+      <option name="closed" value="true" />
+      <created>1734271112508</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1734271112508</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
