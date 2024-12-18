@@ -18,10 +18,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9a464ca-a5af-4499-822b-a606aa1bea36" name="Changes" comment="Change endocoded dimentisons' plots">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Report/main.tex" beforeDir="false" afterPath="$PROJECT_DIR$/Report/main.tex" afterDir="false" />
-    </list>
+    <list default="true" id="c9a464ca-a5af-4499-822b-a606aa1bea36" name="Changes" comment="last changes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,6 +146,7 @@
       <workItem from="1734271100876" duration="90000" />
       <workItem from="1734271293184" duration="2000" />
       <workItem from="1734271300692" duration="566000" />
+      <workItem from="1734460431255" duration="175000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -182,7 +180,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734271112508</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="last changes">
+      <option name="closed" value="true" />
+      <created>1734460525123</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1734460525123</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,9 +208,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
     <MESSAGE value="Change endocoded dimentisons' plots" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change endocoded dimentisons' plots" />
+    <MESSAGE value="last changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="last changes" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Lab4_NeuralNetworks$main.coverage" NAME="main Coverage Results" MODIFIED="1734270396528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/Python" />
+    <SUITE FILE_PATH="coverage/Lab4_NeuralNetworks$main.coverage" NAME="main Coverage Results" MODIFIED="1734460434131" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/Python" />
   </component>
 </project>
