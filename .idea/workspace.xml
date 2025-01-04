@@ -18,10 +18,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9a464ca-a5af-4499-822b-a606aa1bea36" name="Changes" comment="Change endocoded dimentisons' plots">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripts/Python/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripts/Python/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="c9a464ca-a5af-4499-822b-a606aa1bea36" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -146,6 +143,11 @@
       <workItem from="1734094479101" duration="2572000" />
       <workItem from="1734121587187" duration="903000" />
       <workItem from="1734269438750" duration="1644000" />
+      <workItem from="1734271100876" duration="90000" />
+      <workItem from="1734271293184" duration="2000" />
+      <workItem from="1734271300692" duration="566000" />
+      <workItem from="1734460431255" duration="175000" />
+      <workItem from="1734553101293" duration="56000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -171,18 +173,54 @@
       <option name="project" value="LOCAL" />
       <updated>1734093919495</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Change endocoded dimentisons' plots">
+      <option name="closed" value="true" />
+      <created>1734271112508</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1734271112508</updated>
+    </task>
+    <task id="LOCAL-00005" summary="last changes">
+      <option name="closed" value="true" />
+      <created>1734460525123</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1734460525123</updated>
+    </task>
+    <task id="LOCAL-00006" summary="last changes">
+      <option name="closed" value="true" />
+      <created>1734553118157</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1734553118157</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
     <MESSAGE value="Change endocoded dimentisons' plots" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change endocoded dimentisons' plots" />
+    <MESSAGE value="last changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="last changes" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Lab4_NeuralNetworks$main.coverage" NAME="main Coverage Results" MODIFIED="1734270396528" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/Python" />
+    <SUITE FILE_PATH="coverage/Lab4_NeuralNetworks$main.coverage" NAME="main Coverage Results" MODIFIED="1734460434131" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripts/Python" />
   </component>
 </project>
