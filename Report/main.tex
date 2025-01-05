@@ -69,19 +69,11 @@ The most intuitive method is visual inspection: it involves checking whether the
 
 An alternative approach is the use of the VAF (Variance Accounted For), a specific metric for assessing the performance of autoencoders. The VAF indicates the quality of the data reconstruction by evaluating how representative and useful the compressed data is for reconstructing the original input. The VAF is computed as:
 \begin{equation*}
-<<<<<<< HEAD
-<<<<<<< HEAD
-	VAF = 1 - \Big(\frac{var(\text{x}_{test} - \text{x}_{pred})}{var(\text{x}_{test})}\Big) \cdot 100
-=======
-	VAF = 1 - (\frac{variance(\textit{true data} - \textit{predicted data})}{variance(\textit{true data})}) \cdot 100
->>>>>>> 9c67fc0a693e3f5d6bc2b8a22d24ff17f8ab5892
-=======
-	VAF = 1 - (\frac{variance(\textit{true data} - \textit{predicted data})}{variance(\textit{true data})}) \cdot 100
->>>>>>> 9c67fc0a693e3f5d6bc2b8a22d24ff17f8ab5892
+	VAF = 1 - \Big(\frac{var(\text{x}_{test} - \text{x}_{rec})}{var(\text{x}_{test})}\Big) \cdot 100
 \end{equation*}
 where:
 $\text{x}_{test}$ represents the original values;
-$\text{x}_{pred}$ represents the values reconstructed by the autoencoder.
+$\text{x}_{rec}$ represents the values reconstructed by the autoencoder.
 The calculated values for each reconstructed data point are reported in Fig. \ref{fig:varianceaccountedfor}.
 \begin{figure}
 	\centering
@@ -99,24 +91,67 @@ Finally, another useful method for evaluating the model's implementation is to c
 \end{figure}
 
 \section{Results and Conclusion}
-The proper functioning of the autoencoder is demonstrated in Fig. \ref{fig:digitalrecostruction}, which highlights the model's ability to reconstruct the original data with high fidelity. This result showcases the effectiveness of the architecture and the training process in capturing the essential features of the input data while minimizing reconstruction error.
+The proper functioning of the autoencoder is demonstrated in Fig. \ref{fig:digitalrecostruction}, which highlights the model's ability to reconstruct the original data. This result showcases the effectiveness of the architecture and the training process in capturing the essential features of the input data while minimizing reconstruction error.
 
-Additionally, Fig. \ref{fig:autoencodermodelloss} illustrates the progressive reduction in information loss as the number of epochs increases, highlighting the steady improvement in model performance. This behavior reflects the optimization of the autoencoder's weights and biases over time, allowing for better alignment between the encoded latent representation and the original data structure.
+Additionally, the progressive reduction in information loss as the number of epochs increases, highlighting the steady improvement in model performance, see Fig. \ref{fig:autoencodermodelloss}. This behavior reflects the optimization of the autoencoder's weights and biases over the time, allowing for better alignment between the encoded latent representation and the original data structure.
 
-An analysis of the Variance Accounted For (VAF) values, shown in Fig. \ref{fig:varianceaccountedfor}, provides further insights into the autoencoder's performance across different digital values. For the digital value 1, the VAF reaches 67.85$\%$, indicating the model's strong ability to capture and reconstruct this value with minimal information loss. Conversely, for the digital value 8, the VAF is 49.30$\%$, reflecting greater difficulty in preserving information during reconstruction. These results emphasize the superior performance of the autoencoder with certain values compared to others, likely due to the complexity or distribution of the data associated with each value.
+The analysis of the Variance Accounted For (VAF), shown in Fig. \ref{fig:varianceaccountedfor}, provides further insights into the autoencoder's performance across different digital values. For the digital value 1, the VAF reaches 67.85$\%$, indicating the model's good ability to capture and reconstruct this value with minimal information loss. Conversely, for the digital value 8, the VAF is 49.30$\%$, reflecting a major difficulty in preserving information during reconstruction. These results emphasize the superior performance of the autoencoder with certain values compared to others, likely due to the complexity or distribution of the data associated with each value.
 
 Furthermore, the scatter plot in Fig. \ref{fig:endodeddimentions} represents the latent space encoded by the autoencoder, showing the first two dimensions of the encoded representation. The points are color-coded based on the digital values $1$ (blue) and $8$ (green). This visualization highlights the distinct separation of the two labels in the encoded space, demonstrating the autoencoder's ability to learn meaningful representations.
 
-The cluster corresponding to Label $1$ appears well-defined and compact, suggesting that the autoencoder effectively captures the structure of this value. In contrast, the points associated with Label $8$ exhibit a wider dispersion, reflecting greater variability in the encoded representation. This aligns with the previously observed lower VAF value for Label $8$, indicating that the reconstruction process struggles more with this class.
+The cluster corresponding to $1$ appears well-defined and compact, suggesting that the autoencoder effectively captures the structure of this value. In contrast, the points associated with $8$ exhibit a wider dispersion, reflecting greater variability in the encoded representation. This aligns with the previously observed lower VAF value for $8$, indicating that the reconstruction process struggles more with this class.
 
 These differences in the encoded space emphasize the variability in the autoencoder's performance depending on the complexity and distribution of the input data. Future improvements could include enhancing the encoder's ability to capture finer details for more challenging labels, potentially through increased latent dimensionality or advanced regularization techniques.
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\linewidth]{Resources/EndodedDImentions}
-	\caption{Visualization of the latent space encoded by the autoencoder, showing the first two dimensions of the encoded representation. Points are color-coded based on digital values: Label 1 (blue) and Label 8 (green).}
+	\caption{Visualization of the encoded latent space, showing the dimensions of the encoded representation. Points are color-coded based on digital values: Label 1 (blue) and Label 8 (green).}
 	\label{fig:endodeddimentions}
 \end{figure}
 
 %% inserire parte mancante task 0 e aggiungi reference
+\section{Deep Learning Toolbox}
+The Deep Learning Toolbox in MATLAB provides advanced tools for designing, training, and analyzing neural networks, facilitating the resolution of classification problems and other machine learning applications (see Fig. \ref{fig:diagrams}). Through its integrated functionalities, it is possible to visualize and evaluate model performance using confusion matrices and ROC curves.
+Confusion matrices offer an intuitive method to compare the predicted classes of a model with the actual ones, allowing for the analysis of classification errors and correctness. Receiver Operating Characteristic (ROC) curves, on the other hand, allow for the examination of the trade-off between the model's sensitivity and specificity, providing a graphical representation of performance across various scenarios. Using these tools, the Deep Learning Toolbox simplifies the analysis and improvement of implemented models, enabling optimization of design choices.
+In this study, three different neural networks were implemented:
+\begin{itemize}
+	\item Neural network $1$ is characterized by $2$ layers: the first consisting of $10$ units, and the second consisting of $2$ units.
+	\item Neural network $2$ is characterized by $2$ layers: the first consisting of $20$ units, and the second consisting of $2$ units.
+	\item Neural network $3$ is characterized by $4$ layers: the first consisting of $20$ units, the second consisting of $10$ units, the third consisting of $5$ units, and the fourth consisting of $2$ units.
+\end{itemize}
+To analyze the performance of each neural network, the different graphs generated by the confusion matrices and ROC curves were compared.
+The confusion matrices, shown in Figs. \ref{fig:confusionmatrix1layers10} and \ref{fig:confusionmatrix4layers20-10-5}, highlight an improvement in model accuracy proportional to the number of layers used to define it. Examining the total confusion matrix (bottom right) for both models, it is evident that as the number of layers increases, so does the probability of correct predictions. Specifically, neural network $1$ achieves an accuracy of 94.9$\%$, while neural network $3$ reaches 96.7$\%$. This improvement suggests that more complex architectures, if well-designed, can lead to better predictive performance.
+The ROC graphs (see Figs. \ref{fig:receiveroperatingcharacteristic1layers20} and \ref{fig:receiveropertingcharacteristic4layers20-10-5}) confirm these findings: in neural network $3$, the combined curve (bottom right) is closer to the upper-left corner, representing the ideal value, compared to that of neural network $2$.
+Overall, the models defined in our analysis demonstrate good predictive capabilities.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.4\linewidth, height=0.3\textheight]{Resources/Diagrams}
+	\caption{Graphical representation of Neural Network 2 and 3}
+	\label{fig:diagrams}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{Resources/confusion_matrix_4_layers_20-10-5}
+	\caption{Confusion matrices for Neural Network 3}
+	\label{fig:confusionmatrix4layers20-10-5}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{Resources/confusion_matrix_1_layers_10}
+	\caption{Confusion matrices for Neural Network 1}
+	\label{fig:confusionmatrix1layers10}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{Resources/receiver_operating_characteristic_1_layers_20}
+	\caption{ROC curve for Neural Network 2}
+	\label{fig:receiveroperatingcharacteristic1layers20}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{Resources/receiver_operting_characteristic_4_layers_20-10-5}
+	\caption{ROC curve for Neural Network 3}
+	\label{fig:receiveropertingcharacteristic4layers20-10-5}
+\end{figure}
 
 \end{document}
